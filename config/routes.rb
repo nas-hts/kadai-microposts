@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  get 'toppages/index'
+
   root to: "toppages#index"
+  
+  get "signup", to: "users#show"
+  resources :users, only: [:index, :show, :new, :create]
+  
 end
